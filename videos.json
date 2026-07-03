@@ -1,19 +1,15 @@
 {
   "videos": [
     {
-      "id": "K1Hi.mp4",
+      "name": "K1Hi.mp4",
       "cdn": "https://cdn.videy.co/drW2Stwa1.mp4"
     },
     {
-      "id": "k1501Tk.mp4",
+      "name": "K2Hi.mp4",
       "cdn": "https://cdn.videy.co/GTRd5Yuj1.mp4"
     },
     {
-      "id": "K2Hi.mp4",
-      "cdn": "https://cdn.videy.co/GTRd5Yuj1.mp4"
-    },
-    {
-      "id": "K3Hi.mp4",
+      "name": "K3Hi.mp4",
       "cdn": "https://cdn.videy.co/YQ4MqSyK1.mp4"
     }
   ]
