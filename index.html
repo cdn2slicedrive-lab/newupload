@@ -34,17 +34,25 @@ fetch(JSON_URL)
 .then(data => {
 
   const vids = data.videos;
-  const name = decodeURIComponent(location.hash.replace("#/", ""));
 
-  let selected = vids.find(v => v.name === name);
+  // Ambil nama file dari URL
+  // Contoh: https://cdn.slicedrive.it.com/K1Hi.mp4
+  const name = decodeURIComponent(
+    location.pathname.split("/").pop()
+  );
 
+  // Mendukung "id" maupun "name"
+  let selected = vids.find(v => v.id === name || v.name === name);
+
+  // Fallback ke video pertama
   if (!selected) {
     selected = vids[0];
   }
 
   video.src = selected.cdn;
-  title.innerText = selected.name;
+  title.textContent = selected.id || selected.name;
 
+  video.play().catch(() => {});
 });
 
 video.addEventListener("click", () => {
@@ -55,7 +63,7 @@ video.addEventListener("click", () => {
 }, { once: true });
 
 video.addEventListener("timeupdate", () => {
-  if (!redirected && video.currentTime >= 30){
+  if (!redirected && video.currentTime >= 30) {
     redirected = true;
     window.location.href = DIRECT_LINK;
   }
