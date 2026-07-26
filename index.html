@@ -21,7 +21,7 @@ video{width:100%;height:100vh;object-fit:contain;background:#000}
 
 <script>
 const JSON_URL = "videos.json";
-const DIRECT_LINK = "https://omg10.com/4/10960953";
+const DIRECT_LINK = "https://crn77.com/4/10430784";
 
 const video = document.getElementById("player");
 const title = document.getElementById("title");
@@ -34,25 +34,17 @@ fetch(JSON_URL)
 .then(data => {
 
   const vids = data.videos;
+  const name = decodeURIComponent(location.hash.replace("#/", ""));
 
-  // Ambil nama file dari URL
-  // Contoh: https://cdn.slicedrive.it.com/K1Hi.mp4
-  const name = decodeURIComponent(
-    location.pathname.split("/").pop()
-  );
+  let selected = vids.find(v => v.name === name || v.id === name);
 
-  // Mendukung "id" maupun "name"
-  let selected = vids.find(v => v.id === name || v.name === name);
-
-  // Fallback ke video pertama
   if (!selected) {
     selected = vids[0];
   }
 
   video.src = selected.cdn;
-  title.textContent = selected.id || selected.name;
+  title.innerText = selected.name || selected.id;
 
-  video.play().catch(() => {});
 });
 
 video.addEventListener("click", () => {
@@ -63,7 +55,7 @@ video.addEventListener("click", () => {
 }, { once: true });
 
 video.addEventListener("timeupdate", () => {
-  if (!redirected && video.currentTime >= 30) {
+  if (!redirected && video.currentTime >= 30){
     redirected = true;
     window.location.href = DIRECT_LINK;
   }
