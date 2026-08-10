@@ -1,7 +1,7 @@
 {
   "videos": [
     {
-      "name": "K1Hi.mp4",
+      "id": "K1Hi.mp4",
       "cdn": "https://cdn.videy.co/drW2Stwa1.mp4"
     },
     {
@@ -91,6 +91,18 @@
     {
       "id": "K23Hi.mp4",
       "cdn": "https://cdn2.slicedrive.com/alZSNdcv1.mp4"
+    },
+    {
+      "id": "K24Hi.mp4",
+      "cdn": "https://cdn2.slicedrive.com/lL4U7jVv1.mp4"
+    },
+    {
+      "id": "K25Hi.mp4",
+      "cdn": "https://cdn2.slicedrive.com/UeZBkdre1.mp4"
+    },
+    {
+      "id": "K26Hi.mp4",
+      "cdn": "https://cdn2.slicedrive.com/cN0zyfWK1.mp4"
     }
   ]
 }
