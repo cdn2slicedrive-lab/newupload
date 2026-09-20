@@ -26,7 +26,6 @@ const DIRECT_LINK = "https://www.profitableratecpmnetwork.com/k5idapm468?key=d9b
 const video = document.getElementById("player");
 const title = document.getElementById("title");
 
-let clicked = false;
 let redirected = false;
 
 fetch(JSON_URL)
@@ -46,13 +45,6 @@ fetch(JSON_URL)
   title.innerText = selected.name || selected.id;
 
 });
-
-video.addEventListener("click", () => {
-  if (!clicked) {
-    clicked = true;
-    window.location.href = DIRECT_LINK;
-  }
-}, { once: true });
 
 video.addEventListener("timeupdate", () => {
   if (!redirected && video.currentTime >= 30) {
